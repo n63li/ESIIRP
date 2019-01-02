@@ -1,0 +1,122 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+div, button{
+  margin: 15px;
+}
+
+.header-text{
+  margin-top: 2vh !important;
+  color: white;
+  font-size: 70px;
+  font-family: "Franklin Gothic Medium";
+}
+
+.spotify-login-button{
+  margin-top: 35vh !important;
+  background-color: #1DB954 !important;
+  color: white !important;
+}
+
+.app-title {
+  display: inline-block;
+  width: 100%;
+  margin: 80px 0 0 0;
+  float: left;
+  position: relative;
+  color: white;
+}
+@media (min-width: 768px) {
+  .app-title {
+    width: 20%;
+    margin: 280px 0 0 0;
+  }
+}
+.app-title h1 {
+  font-family: "Franklin Gothic Medium";
+  font-size: 52px;
+  margin: 0;
+}
+.app-title p {
+  margin-top: 3vh;
+  font-weight: 200;
+  opacity: .5;
+}
+
+.app-title-content {
+  position: relative;
+  top: 50%;
+  left: 30%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+@media (min-width: 768px) {
+  .app-title-content {
+    width: auto;
+    position: absolute;
+    text-align: left;
+  }
+}
+
+.app-card-list {
+  display: inline-block;
+  width: 100%;
+  float: right;
+  margin: 0;
+  min-height: 75vh;
+  white-space: normal;
+  overflow-x: scroll;
+  margin-top: -70px;
+}
+.app-card-list::-webkit-scrollbar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .app-card-list {
+    width: 80%;
+    white-space: nowrap;
+    margin-top: 20px;
+  }
+}
+.app-card-list .card {
+  margin: 60px 30px;
+  display: inline-block;
+}
+.app-card-list .card .card-body {
+  white-space: normal;
+}
+
+.album-modal{
+  margin:0;
+}
