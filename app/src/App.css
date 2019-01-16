@@ -152,3 +152,11 @@ div, button{
   font-size: 42px;
   color: white;
 }
+
+.graph{
+  margin-left: -12.5%;
+}
+
+.spotify-player{
+  margin-top: 10vh;
+}

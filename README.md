@@ -1,8 +1,7 @@
 # Every Song in Its Right Place
-This project is my first attempt at creating a React web app. It displays the most popular tracks per album in my
-favourite band, Radiohead's, discography. It is a simple app making calls to Spotify's Web API to retrieve musical
-metadata for each album and track. Application is based on [create-react-app](https://github.com/facebook/create-react-app)
-and [Spotify's Web API Authentication](https://github.com/spotify/web-api-auth-examples)
+This project is my first attempt at creating a React web app. It displays the most popular tracks per album for any Spotify artist.
+It is a simple app making calls to Spotify's Web API to retrieve musicalmetadata for each album and track. The application is based on
+[create-react-app](https://github.com/facebook/create-react-app) and [Spotify's Web API Authentication](https://github.com/spotify/web-api-auth-examples)
 
 ## Getting Started
 ### 1) Create an App

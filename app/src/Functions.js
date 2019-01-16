@@ -19,6 +19,7 @@ export const getAlbums = (artistID) => {
 
   return spotifyWebApi.getArtistAlbums(artistID)
     .then((albumResponse) => {
+      // console.log(albumResponse)
       albumResponse.items.forEach((album) => {
         albumArray.push({
           "id": album.id,
@@ -49,11 +50,13 @@ function getTracks(albumID){
 
   return spotifyWebApi.getAlbumTracks(albumID)
     .then((trackResponse) => {
+      // console.log(trackResponse)
       trackResponse.items.forEach((track) => {
         trackArray.push({
           "id": track.id,
           "name": track.name,
           "trackNumber": track.track_number,
+          "previewURL": track.preview_url,
           "popularity": ""
         })
       })

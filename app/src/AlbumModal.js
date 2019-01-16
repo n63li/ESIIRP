@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Button, Header, Image, Modal} from 'semantic-ui-react'
 import TrackList from './TrackList'
+import Graph from './Graph';
 import './App.css';
 
 class AlbumModal extends Component{
@@ -8,8 +9,7 @@ class AlbumModal extends Component{
     super();
     this.state={
       isOpen: false,
-      tracks: {},
-      updated: false
+      tracks: {}
     }
   }
 
@@ -28,6 +28,8 @@ class AlbumModal extends Component{
           <Modal.Content image>
             <Image wrapped size='medium' src={this.props.image}/>
             <Modal.Description>
+              <Header>Popularity</Header>
+              <Graph id={this.props.albumTitle} tracks={this.props.tracks[0] && this.props.tracks}/>
               <Header>Tracks</Header>
               <TrackList tracks={this.props.tracks[0] && this.props.tracks}/>
             </Modal.Description>
