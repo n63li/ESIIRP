@@ -15,7 +15,7 @@ class AlbumContainer extends Component{
   }
 
   componentDidMount(){
-    getAlbums().then((response) => {
+    getAlbums(this.props.artistID).then((response) => {
       this.setState(() => {
         return {
           updated: true,

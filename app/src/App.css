@@ -35,13 +35,6 @@ div, button{
   margin: 15px;
 }
 
-.header-text{
-  margin-top: 2vh !important;
-  color: white;
-  font-size: 70px;
-  font-family: "Franklin Gothic Medium";
-}
-
 .spotify-login-button{
   margin-top: 35vh !important;
   background-color: #1DB954 !important;
@@ -59,7 +52,7 @@ div, button{
 @media (min-width: 768px) {
   .app-title {
     width: 20%;
-    margin: 280px 0 0 0;
+    margin: 46vh 0 0 0;
   }
 }
 .app-title h1 {
@@ -106,7 +99,7 @@ div, button{
   .app-card-list {
     width: 80%;
     white-space: nowrap;
-    margin-top: 20px;
+    margin-top: 1vh;
   }
 }
 .app-card-list .card {
@@ -118,9 +111,44 @@ div, button{
 }
 
 .album-modal{
-  margin:0;
+  margin: 0;
 }
 
 .ui.modal>.content{
   width: 98%;
+}
+
+.welcome{
+  /*margin-left: 30%;*/
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.ui.form{
+  max-width: 100%;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.welcome> p{
+  max-width: 80%;
+  padding-top: 23vh;
+  margin: 0;
+  font-size: 16px;
+  color: white;
+}
+
+.ui.large.negative.message{
+  margin-top: 2vh;
+  left: 2.5%;
+  right: 2.5%;
+}
+
+.artist-name{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 3vh;
+  font-size: 42px;
+  color: white;
 }

@@ -14,7 +14,9 @@ class App extends Component {
     const params = this.getHashParams();
     this.state = {
       loggedIn: params.access_token? true : false,
-      isOpen: false
+      artistID: '',
+      artistName: '',
+      artistReceived: false
     }
     if (params.access_token){
       spotifyWebApi.setAccessToken(params.access_token)
@@ -31,6 +33,14 @@ class App extends Component {
     return hashParams;
   }
 
+  handleArtistInput = (artistIDFromChild) => {
+    this.setState({
+      artistID: artistIDFromChild.id,
+      artistName: artistIDFromChild.name,
+      artistReceived: true
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -40,8 +50,9 @@ class App extends Component {
             <Button className="spotify-login-button" size='large'>Login With Spotify</Button>
           </a>
         }
-        {this.state.loggedIn && <AlbumContainer/>}
-        {/*<Welcome/>*/}
+        {this.state.loggedIn && !this.state.artistReceived && <Welcome onSelectArtist={this.handleArtistInput}/>}
+        {this.state.loggedIn && this.state.artistReceived && <h1 className='artist-name'>{this.state.artistName}</h1>}
+        {this.state.loggedIn && this.state.artistReceived && <AlbumContainer artistID={this.state.artistID}/>}
       </div>
     );
   }

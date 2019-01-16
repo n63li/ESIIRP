@@ -1,13 +1,23 @@
 import Spotify from 'spotify-web-api-js';
 
 const spotifyWebApi = new Spotify();
-const RADIOHEAD_ID = '4Z8W4fKeB5YxbusRsdQVPb';
 
-export const getAlbums = () => {
+export const getID = (artistID) => {
+  return spotifyWebApi.search(artistID, ['artist']).then((response) => {
+    if (response.artists.items.length !== 0){
+      return {"name": response.artists.items[0].name, "id": response.artists.items[0].id}
+    }
+    else{
+      return false;
+    }
+  })
+}
+
+export const getAlbums = (artistID) => {
   const albumArray = [];
   const promiseArray = [];
 
-  return spotifyWebApi.getArtistAlbums(RADIOHEAD_ID)
+  return spotifyWebApi.getArtistAlbums(artistID)
     .then((albumResponse) => {
       albumResponse.items.forEach((album) => {
         albumArray.push({
