@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Spotify from 'spotify-web-api-js';
+import Welcome from './Welcome';
 import AlbumContainer from './AlbumContainer';
 import { Button } from 'semantic-ui-react'
 import Title from './Title'
@@ -39,7 +40,8 @@ class App extends Component {
             <Button className="spotify-login-button" size='large'>Login With Spotify</Button>
           </a>
         }
-        {this.state.loggedIn && <AlbumContainer/>}
+        {/*{this.state.loggedIn && <AlbumContainer/>}*/}
+        <Welcome/>
       </div>
     );
   }

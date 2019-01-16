@@ -120,3 +120,7 @@ div, button{
 .album-modal{
   margin:0;
 }
+
+.ui.modal>.content{
+  width: 98%;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Button, Header, Image, Modal} from 'semantic-ui-react'
 import TrackList from './TrackList'
+import './App.css';
 
 class AlbumModal extends Component{
   constructor(){
