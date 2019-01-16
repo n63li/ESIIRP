@@ -40,8 +40,8 @@ class App extends Component {
             <Button className="spotify-login-button" size='large'>Login With Spotify</Button>
           </a>
         }
-        {/*{this.state.loggedIn && <AlbumContainer/>}*/}
-        <Welcome/>
+        {this.state.loggedIn && <AlbumContainer/>}
+        {/*<Welcome/>*/}
       </div>
     );
   }
