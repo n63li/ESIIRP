@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Button, Header, Image, Modal} from 'semantic-ui-react'
 import TrackList from './TrackList'
+import SpotifyPlayer from './SpotifyPlayer';
 import Graph from './Graph';
 import './App.css';
 
@@ -27,8 +28,9 @@ class AlbumModal extends Component{
           <Modal.Header>{this.props.albumTitle}</Modal.Header>
           <Modal.Content image>
             <Image wrapped size='medium' src={this.props.image}/>
+            {/*<SpotifyPlayer/>*/}
             <Modal.Description>
-              <Header>Popularity</Header>
+              <Header>Metadata Graphs</Header>
               <Graph id={this.props.albumTitle} tracks={this.props.tracks[0] && this.props.tracks}/>
               <Header>Tracks</Header>
               <TrackList tracks={this.props.tracks[0] && this.props.tracks}/>

@@ -57,7 +57,15 @@ function getTracks(albumID){
           "name": track.name,
           "trackNumber": track.track_number,
           "previewURL": track.preview_url,
-          "popularity": ""
+          "popularity": "",
+          "acousticness": "",
+          "danceability": "",
+          "energy": "",
+          "instrumentalness": "",
+          "liveness": "",
+          "loudness": "",
+          "speachiness": "",
+          "valence": ""
         })
       })
     })
@@ -65,10 +73,18 @@ function getTracks(albumID){
       trackArray.forEach((track) =>
         promiseArray.push(getTrackPopularity(track.id))
       );
-      return Promise.all(promiseArray).then((popularityArray) => {
-        trackArray.forEach((track) =>
-          track.popularity = popularityArray[trackArray.indexOf(track)]
-        );
+      return Promise.all(promiseArray).then((featuresArray) => {
+        trackArray.forEach((track) => {
+          track.popularity = featuresArray[trackArray.indexOf(track)][0].popularity
+          track.acousticness = featuresArray[trackArray.indexOf(track)][0].acousticness
+          track.danceability = featuresArray[trackArray.indexOf(track)][0].danceability
+          track.energy = featuresArray[trackArray.indexOf(track)][0].energy
+          track.instrumentalness = featuresArray[trackArray.indexOf(track)][0].instrumentalness
+          track.liveness = featuresArray[trackArray.indexOf(track)][0].liveness
+          track.loudness = featuresArray[trackArray.indexOf(track)][0].loudness
+          track.speachiness = featuresArray[trackArray.indexOf(track)][0].speachiness
+          track.valence = featuresArray[trackArray.indexOf(track)][0].valence
+        });
         trackArray.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity));
         return trackArray;
       })
@@ -76,9 +92,25 @@ function getTracks(albumID){
 }
 
 function getTrackPopularity(trackID){
-  return spotifyWebApi.getTrack(trackID).then((response) => {
-    return response.popularity
-  });
+  const featuresArray = [];
+  const promiseArray = [];
+  promiseArray.push(spotifyWebApi.getTrack(trackID))
+  promiseArray.push(spotifyWebApi.getAudioFeaturesForTrack(trackID))
+  return Promise.all(promiseArray).then((response)=>{
+    featuresArray.push({
+      "popularity": response[0].popularity,
+      "acousticness": response[1].acousticness,
+      "danceability": response[1].danceability,
+      "energy": response[1].energy,
+      "instrumentalness": response[1].instrumentalness,
+      "liveness": response[1].liveness,
+      "loudness": response[1].loudness,
+      "speachiness": response[1].speechiness,
+      "valence": response[1].valence
+    });
+    console.log(featuresArray)
+    return featuresArray
+  })
 }
 
 

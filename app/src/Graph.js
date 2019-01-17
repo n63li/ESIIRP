@@ -23,7 +23,15 @@ class Graph extends Component{
         promises.push(
           pointsArray.push({
             "name": track.name,
-            "popularity": track.popularity
+            "popularity": track.popularity,
+            "acousticness": track.acousticness,
+            "danceability": track.danceability,
+            "energy": track.energy,
+            "instrumentalness": track.instrumentalness,
+            "liveness": track.liveness,
+            "loudness": track.loudness,
+            "speachiness": track.speechiness,
+            "valence": track.valence
           })
         );
       });
@@ -69,6 +77,18 @@ class Graph extends Component{
           <Tooltip/>
           <Legend/>
           <Line type='monotone' dataKey='popularity' stroke="#82ca9d"/>
+        </LineChart>
+        <LineChart width={600} height={300} data={this.state.data} margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+          <XAxis dataKey='name'/>
+          <YAxis/>
+          <CartesianGrid strokeDasharray='3 3'/>
+          <Tooltip/>
+          <Legend/>
+          <Line type='monotone' dataKey='acousticness' stroke="#8884d8"/>
+          <Line type='monotone' dataKey='valence' stroke="#82ca9d"/>
+          <Line type='monotone' dataKey='energy' stroke="#FFDAB9"/>
+          <Line type='monotone' dataKey='danceability' stroke="#B22222"/>
+          <Line type='monotone' dataKey='speachiness' stroke="#FF1493"/>
         </LineChart>
       </div>
     )
