@@ -30,7 +30,7 @@ class AlbumModal extends Component{
             <Image wrapped size='medium' src={this.props.image}/>
             {/*<SpotifyPlayer/>*/}
             <Modal.Description>
-              <Header>Metadata Graphs</Header>
+              <Header>Musical Metadata</Header>
               <Graph id={this.props.albumTitle} tracks={this.props.tracks[0] && this.props.tracks}/>
               <Header>Tracks</Header>
               <TrackList tracks={this.props.tracks[0] && this.props.tracks}/>
