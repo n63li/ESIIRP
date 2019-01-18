@@ -160,3 +160,13 @@ div, button{
 .spotify-player{
   margin-top: 10vh;
 }
+
+.github-button{
+  color: white;
+  margin-right: 5%;
+}
+
+.spotify-link{
+  color: white;
+  margin-bottom: 105%;
+}

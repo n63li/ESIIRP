@@ -24,7 +24,7 @@ class AlbumModal extends Component{
     return(
       <div>
         <Button onClick={this.toggleModal}>Album Information</Button>
-        <Modal open={this.state.isOpen} onClose={this.toggleModal} >
+        <Modal open={this.state.isOpen} onClose={this.toggleModal}>
           <Modal.Header>{this.props.albumTitle}</Modal.Header>
           <Modal.Content image>
             <Image wrapped size='medium' src={this.props.image}/>

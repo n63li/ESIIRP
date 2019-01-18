@@ -9,8 +9,7 @@ class AlbumContainer extends Component{
     this.state = {
       active: 0,
       albums: {},
-      updated: false,
-      isOpen: false,
+      updated: false
     }
   }
 

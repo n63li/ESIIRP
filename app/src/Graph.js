@@ -5,7 +5,7 @@ import './App.css';
 class Graph extends Component{
   constructor(){
     super();
-    this.state={
+    this.state = {
       data: [],
       dataGenerated: false,
       opacity: {
@@ -16,7 +16,7 @@ class Graph extends Component{
         instrumentalness: 1,
         liveness: 1,
         loudness: 1,
-        speachiness: 1,
+        speechiness: 1,
         valence: 1
       }
     };
@@ -40,7 +40,7 @@ class Graph extends Component{
             "instrumentalness": track.instrumentalness,
             "liveness": track.liveness,
             "loudness": track.loudness,
-            "speachiness": track.speechiness,
+            "speechiness": track.speechiness,
             "valence": track.valence
           })
         );
@@ -95,7 +95,7 @@ class Graph extends Component{
           <Line type='monotone' dataKey='valence' strokeOpacity={this.state.opacity.valence} stroke="#82ca9d"/>
           <Line type='monotone' dataKey='energy' strokeOpacity={this.state.opacity.energy} stroke="#FFDAB9"/>
           <Line type='monotone' dataKey='danceability' strokeOpacity={this.state.opacity.danceability} stroke="#B22222"/>
-          <Line type='monotone' dataKey='speachiness' strokeOpacity={this.state.opacity.speachiness} stroke="#FF1493"/>
+          <Line type='monotone' dataKey='speechiness' strokeOpacity={this.state.opacity.speechiness} stroke="#FF1493"/>
         </LineChart>
       </div>
     )

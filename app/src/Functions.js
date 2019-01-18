@@ -82,7 +82,7 @@ function getTracks(albumID){
           track.instrumentalness = featuresArray[trackArray.indexOf(track)][0].instrumentalness
           track.liveness = featuresArray[trackArray.indexOf(track)][0].liveness
           track.loudness = featuresArray[trackArray.indexOf(track)][0].loudness
-          track.speachiness = featuresArray[trackArray.indexOf(track)][0].speachiness
+          track.speechiness = featuresArray[trackArray.indexOf(track)][0].speechiness
           track.valence = featuresArray[trackArray.indexOf(track)][0].valence
         });
         trackArray.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity));
@@ -105,7 +105,7 @@ function getTrackPopularity(trackID){
       "instrumentalness": response[1].instrumentalness,
       "liveness": response[1].liveness,
       "loudness": response[1].loudness,
-      "speachiness": response[1].speechiness,
+      "speechiness": response[1].speechiness,
       "valence": response[1].valence
     });
     console.log(featuresArray)
